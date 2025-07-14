@@ -26,8 +26,12 @@ LOGS =>
 
 */
 
-function triangles() {
-  
+function triangles(num) {
+  // count loop
+  for(var i = 1; i <= num; i++){
+    // log to the console each loop
+    console.log("#".repeat(i));
+  }
 }
 
 
@@ -48,7 +52,17 @@ on the number:
 */
 
 function fizzBuzz(start, end) {
-  
+  for( var i = start; i <= end ; i++){
+    if(i % 3 === 0 && i % 5 === 0){
+      console.log('fizzbuzz');
+    } else if (i % 3 === 0){
+      console.log('fizz');
+    } else if (i % 5 === 0){
+      console.log('buzz');
+    } else {
+      console.log(i);
+    }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -82,10 +96,27 @@ LOGS =>
 */
 
 function drawChessboard(x) {
-
-
+  // empty string
+  let board = "";
+ 
+  // for loop to make something happen each iteration - row
+  for(var i = 0; i < x; i++){
+    
+    // another loop but for column
+    for(var j = 0; j < x; j++){
+      // if statement to space things out based on even or odd
+      if((i + j) % 2 === 0){
+        board += " "; // the blank space 
+      } else {
+        board += "#"; // the filler hash
+      }
+    }
+    board += "\n";
+  }
+  console.log(board);
 }
 
+console.log(drawChessboard(4));
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
